@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Natália & Fábio ❤️</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        background: #fff0f6;
+        overflow-x: hidden;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 3rem;
+        margin-top: 20px;
+        color: #d6336c;
+    }
+
+    /* Carrossel */
+    .carousel {
+        width: 90%;
+        max-width: 700px;
+        margin: 20px auto;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    .slides {
+        display: flex;
+        width: 500%;
+        animation: slide 25s infinite;
+    }
+
+    .slides img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    @keyframes slide {
+        0% { transform: translateX(0); }
+        20% { transform: translateX(0); }
+        25% { transform: translateX(-100%); }
+        40% { transform: translateX(-100%); }
+        45% { transform: translateX(-200%); }
+        60% { transform: translateX(-200%); }
+        65% { transform: translateX(-300%); }
+        80% { transform: translateX(-300%); }
+        85% { transform: translateX(-400%); }
+        100% { transform: translateX(-400%); }
+    }
+
+    /* Contagem */
+    #contador {
+        text-align: center;
+        font-size: 2rem;
+        margin-top: 10px;
+        color: #c2255c;
+        font-weight: bold;
+    }
+
+    h2 {
+        text-align: center;
+        color: #d6336c;
+        margin-top: 40px;
+    }
+
+    .mensagem {
+        width: 90%;
+        max-width: 800px;
+        background: white;
+        margin: 20px auto;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.15);
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: #5a012a;
+        text-align: justify;
+    }
+
+    /* Corações caindo */
+    .coracao {
+        position: fixed;
+        top: -10px;
+        color: #ff4d6d;
+        font-size: 20px;
+        animation: cair linear infinite;
+    }
+
+    @keyframes cair {
+        to {
+            transform: translateY(110vh);
+            opacity: 0;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<h1>Natália & Fábio</h1>
+
+<div class="carousel">
+    <div class="slides">
+        <img src="fotos/foto1.jpg">
+        <img src="fotos/foto2.jpg">
+        <img src="fotos/foto3.jpg">
+        <img src="fotos/foto4.jpg">
+        <img src="fotos/foto5.jpg">
+    </div>
+</div>
+
+<h2>Juntos há</h2>
+<div id="contador">Carregando...</div>
+
+<h2>Nossa Mensagem</h2>
+
+<div class="mensagem">
+    Meu amor, eu sou muito feliz e sei que serei feliz por toda a minha vida ao seu lado.  
+    Durante todos esses anos, descobrimos tantas coisas juntos...  
+    Coisas profundas, especiais, que marcaram a nossa história.
+
+    Construímos sonhos, realizamos outros, mudamos de cidade, enfrentamos desafios, vencemos batalhas.
+    Deus nos confiou o maior presente que poderíamos receber:  
+    <strong>nossas filhas gêmeas, tão lindas e iluminadas</strong>, que enchem nossa casa de vida.
+
+    Você conquistou seu novo cargo, e eu me orgulho imensamente de você, da sua força, da sua coragem e do seu coração.  
+    Rimos, choramos, discutimos, abraçamos, vencemos cada fase lado a lado.  
+
+    E em cada momento, o nosso amor cresceu.
+
+    Você, meu amor, é a parte mais preciosa da minha vida.  
+    A cada dia eu aprendo mais com você, cresço mais, me torno melhor graças ao amor que construímos.
+
+    Desejo que o nosso amor seja tão forte que vença a rotina, tão imenso quanto o céu, e tão bonito que nunca nos deixe esquecer o quanto somos abençoados.
+
+    Que dois sejam sempre um.  
+    E que um possa ser sempre dois.
+
+    Que Deus continue iluminando a nossa família.  
+    Eu te amo, minha esposa. Hoje e sempre. ❤️
+</div>
+
+<audio id="bgmusic" autoplay loop>
+    <source src="musica/musica.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+// Contagem desde 11/02/2017
+function calcularTempo() {
+    const inicio = new Date(2017, 1, 11); 
+    const agora = new Date();
+
+    let anos = agora.getFullYear() - inicio.getFullYear();
+    let meses = agora.getMonth() - inicio.getMonth();
+    let dias = agora.getDate() - inicio.getDate();
+
+    if (dias < 0) {
+        meses--;
+        dias += new Date(agora.getFullYear(), agora.getMonth(), 0).getDate();
+    }
+
+    if (meses < 0) {
+        anos--;
+        meses += 12;
+    }
+
+    document.getElementById("contador").innerHTML =
+        `${anos} anos, ${meses} meses e ${dias} dias`;
+}
+calcularTempo();
+
+// Corações caindo
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "coracao";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+    heart.style.fontSize = (Math.random() * 15 + 10) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 6000);
+}, 300);
+
+// Forçar música no mobile
+document.addEventListener("click", () => {
+    const audio = document.getElementById("bgmusic");
+    audio.play();
+});
+</script>
+
+</body>
+</html>
