@@ -11,53 +11,58 @@
         font-family: 'Arial', sans-serif;
         background: #fff0f6;
         overflow-x: hidden;
+        padding-bottom: 50px; /* Espaço para não cortar o final */
     }
 
     h1 {
         text-align: center;
-        font-size: 3rem;
+        font-size: 2.5rem;
         margin-top: 20px;
         color: #d6336c;
     }
 
-    /* Carrossel */
+    /* --- CARROSSEL AJUSTADO --- */
     .carousel {
         width: 90%;
-        max-width: 700px;
+        max-width: 400px; /* Diminuí de 700px para 400px */
+        height: 300px;    /* Altura fixa para não ficar gigante */
         margin: 20px auto;
         overflow: hidden;
         border-radius: 20px;
         box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        background: #000;
     }
 
     .slides {
         display: flex;
         width: 500%;
-        animation: slide 25s infinite;
+        height: 100%;
+        animation: slide 20s infinite; /* Um pouco mais rápido */
     }
 
     .slides img {
-        width: 100%;
-        object-fit: cover;
+        width: 20%;      /* Ajuste para 5 imagens */
+        height: 100%;    /* Força a imagem a respeitar a altura */
+        object-fit: cover; /* Corta as bordas para preencher sem esticar */
     }
 
     @keyframes slide {
         0% { transform: translateX(0); }
         20% { transform: translateX(0); }
-        25% { transform: translateX(-100%); }
-        40% { transform: translateX(-100%); }
-        45% { transform: translateX(-200%); }
-        60% { transform: translateX(-200%); }
-        65% { transform: translateX(-300%); }
-        80% { transform: translateX(-300%); }
-        85% { transform: translateX(-400%); }
-        100% { transform: translateX(-400%); }
+        25% { transform: translateX(-20%); }
+        40% { transform: translateX(-20%); }
+        45% { transform: translateX(-40%); }
+        60% { transform: translateX(-40%); }
+        65% { transform: translateX(-60%); }
+        80% { transform: translateX(-60%); }
+        85% { transform: translateX(-80%); }
+        100% { transform: translateX(-80%); }
     }
 
     /* Contagem */
     #contador {
         text-align: center;
-        font-size: 2rem;
+        font-size: 1.5rem;
         margin-top: 10px;
         color: #c2255c;
         font-weight: bold;
@@ -66,21 +71,49 @@
     h2 {
         text-align: center;
         color: #d6336c;
-        margin-top: 40px;
+        margin-top: 30px;
+        font-size: 1.5rem;
     }
 
     .mensagem {
-        width: 90%;
-        max-width: 800px;
+        width: 85%;
+        max-width: 600px;
         background: white;
         margin: 20px auto;
-        padding: 25px;
+        padding: 20px;
         border-radius: 15px;
         box-shadow: 0 0 15px rgba(0,0,0,0.15);
-        font-size: 1.2rem;
-        line-height: 1.8;
+        font-size: 1.1rem;
+        line-height: 1.6;
         color: #5a012a;
         text-align: justify;
+    }
+
+    /* Botão de Música */
+    .music-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #d6336c;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: pulsando 2s infinite;
+    }
+
+    @keyframes pulsando {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
     }
 
     /* Corações caindo */
@@ -90,6 +123,7 @@
         color: #ff4d6d;
         font-size: 20px;
         animation: cair linear infinite;
+        z-index: -1;
     }
 
     @keyframes cair {
@@ -123,30 +157,32 @@
 <div class="mensagem">
     Meu amor, eu sou muito feliz e sei que serei feliz por toda a minha vida ao seu lado.  
     Durante todos esses anos, descobrimos tantas coisas juntos...  
-    Coisas profundas, especiais, que marcaram a nossa história.
+    Coisas profundas, especiais, que marcaram a nossa história.<br><br>
 
     Construímos sonhos, realizamos outros, mudamos de cidade, enfrentamos desafios, vencemos batalhas.
     Deus nos confiou o maior presente que poderíamos receber:  
-    <strong>nossas filhas gêmeas, tão lindas e iluminadas</strong>, que enchem nossa casa de vida.
+    <strong>nossas filhas gêmeas, tão lindas e iluminadas</strong>, que enchem nossa casa de vida.<br><br>
 
     Você conquistou seu novo cargo, e eu me orgulho imensamente de você, da sua força, da sua coragem e do seu coração.  
-    Rimos, choramos, discutimos, abraçamos, vencemos cada fase lado a lado.  
+    Rimos, choramos, discutimos, abraçamos, vencemos cada fase lado a lado.<br><br>
 
-    E em cada momento, o nosso amor cresceu.
+    E em cada momento, o nosso amor cresceu.<br><br>
 
     Você, meu amor, é a parte mais preciosa da minha vida.  
-    A cada dia eu aprendo mais com você, cresço mais, me torno melhor graças ao amor que construímos.
+    A cada dia eu aprendo mais com você, cresço mais, me torno melhor graças ao amor que construímos.<br><br>
 
-    Desejo que o nosso amor seja tão forte que vença a rotina, tão imenso quanto o céu, e tão bonito que nunca nos deixe esquecer o quanto somos abençoados.
+    Desejo que o nosso amor seja tão forte que vença a rotina, tão imenso quanto o céu, e tão bonito que nunca nos deixe esquecer o quanto somos abençoados.<br><br>
 
     Que dois sejam sempre um.  
-    E que um possa ser sempre dois.
+    E que um possa ser sempre dois.<br><br>
 
     Que Deus continue iluminando a nossa família.  
     Eu te amo, minha esposa. Hoje e sempre. ❤️
 </div>
 
-<audio id="bgmusic" autoplay loop>
+<button class="music-btn" onclick="toggleMusic()">🎵</button>
+
+<audio id="bgmusic" loop>
     <source src="musica/musica.mp3" type="audio/mpeg">
 </audio>
 
@@ -175,6 +211,20 @@ function calcularTempo() {
 }
 calcularTempo();
 
+// Função para Tocar/Pausar Música
+function toggleMusic() {
+    const audio = document.getElementById("bgmusic");
+    const btn = document.querySelector(".music-btn");
+    
+    if (audio.paused) {
+        audio.play();
+        btn.innerHTML = "❚❚"; // Muda ícone para pause
+    } else {
+        audio.pause();
+        btn.innerHTML = "🎵"; // Muda ícone para música
+    }
+}
+
 // Corações caindo
 setInterval(() => {
     const heart = document.createElement("div");
@@ -187,12 +237,6 @@ setInterval(() => {
 
     setTimeout(() => heart.remove(), 6000);
 }, 300);
-
-// Forçar música no mobile
-document.addEventListener("click", () => {
-    const audio = document.getElementById("bgmusic");
-    audio.play();
-});
 </script>
 
 </body>
